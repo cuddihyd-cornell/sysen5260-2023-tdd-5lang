@@ -115,11 +115,20 @@ func readMatrix(fp *os.File) (matrix, error){
 }
 
 func matrixMultiply(mat_a matrix, mat_b matrix) (matrix, error) {
+	var i, j, k int
 	ans := makeMatrix(mat_a.nrows, mat_b.ncols)
 	if mat_a.ncols != mat_b.nrows{
 		return ans, errors.New("matrixMultiply: mat_a.ncols must == mat_b.nrows.")
 	}
 	// TODO: Implement matrix multiply 
+	for i=0; i < mat_a.nrows; i++ {
+		for j = 0; j < mat_b.ncols; j++ {
+			ans.values[i][j] = 0
+			for k =0; k < mat_b.nrows; k++ {
+				ans.values[i][j] += mat_a.values[i][k] * mat_b.values[k][j]
+			}
+		}
+	}
 	return ans, nil
 }
 
