@@ -1,8 +1,8 @@
 const matrix = require('./matrix.js');
 
-test('mpy mat-a * mat-b should yield mat-c.', () =>{
+test('mpy mat-a * mat-b should yield mat-c.', () => {
     let matA = matrix.readMatrix("/opt/data/mat_a.csv");
-    expect(matrix.matmpy(1,2)).toBe(3);
+    expect(matrix.matmpy(1, 2)).toBe(3);
 })
 
 test('read-write-read roundtrip should be equal.', () => {
