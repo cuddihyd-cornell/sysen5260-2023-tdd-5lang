@@ -19,3 +19,18 @@ test('matrix.multiply should produce acorrect result.', () => {
     let actual = matrix.multiply(matA, matB);
     expect(actual).toEqual(expected);
 })
+
+test('read-write-read roundtrip should be equal matrix d.', () => {
+    let matDR = matrix.readMatrix("/opt/data/mat_d.csv");
+    matrix.writeMatrix(matDR, "/tmp/test-matrix.csv");
+    let matDWR = matrix.readMatrix("/tmp/test-matrix.csv");
+    expect(matDR).toEqual(matDWR);
+})
+
+test('matrix.multiply should produce a correct result, d, e ==> f.', () => {
+    let matD = matrix.readMatrix("/opt/data/mat_d.csv");
+    let matE = matrix.readMatrix("/opt/data/mat_e.csv");
+    let expected = matrix.readMatrix("/opt/data/mat_f.csv");
+    let actual = matrix.multiply(matD, matE);
+    expect(actual).toEqual(expected);
+})
