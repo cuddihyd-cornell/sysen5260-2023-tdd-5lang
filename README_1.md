@@ -2,7 +2,7 @@
 
 # Python Questions
 
-**i. Is Python a compiled language or an interpreted language?  Is C statically typed or dynamically typed?**
+**i. Is Python a compiled language or an interpreted language?  Is Python statically typed or dynamically typed?**
 
 	Answer: Python is an interpreted language, where the source code of a Python program is converted into bytecode that is then executed by the Python Virtual Machine. Python is dynamically typed.
 
