@@ -1,57 +1,16 @@
 # matrixmultiply in Go
-This project implements matrix-multiply in Go.
 
-# Usage
-In order use the `matrixmultiply` program you must:
+## Is Go a compiled language or an interpreted language? Is Go statically typed or dynamically typed?
 
-1. Start the container.
-2. Build the matrixmultiply program.
-3. Run it.
+Similarly to the C programming language, Go is a compiled language coverting source code to binary code. Furthermore, Go is a statically typed language meaning you must define your types upfront.
 
-## Starting the Container
-To start the container, you need to run the following from this directory on your host machine:
+## Go comes with a full suite of build tools that help us create and configure our modules. What do the following commands do?
 
-```
-docker-compose run shell
-```
+1. go run . compiles and runs a Go program located in the current directory
+2. go mod tidy ensures dependencies are up to date
+3. go build compiles and creates executable
+4. go test executes the tests in the current package
 
-This will build and start a Linux container with all 
-software required to build and run Go programs.
+## What does the := operator do in Go?
 
-Once the container builds, you should be presented with a shell-prompt similar to this:
-
-```
-root@5e51423c8497:/opt/app#
-```
-
-This is the **container shell prompt** -- a bash shell running inside the container.
-
-## Build
-From the container shell prompt, run:
-
-```
-go build
-```
-
-This builds the `matrixmultiply` executable from source-code.
-
-## Run
-From the container shell prompt, run:
-
-```
-./matrixmultiply /opt/data/mat_a.csv /opt/data/mat_b.csv
-```
-
-## Testing
-To run our unit-test in Go, run the following from the container shell prompt:
-
-```
-go test
-```
-
-A successful unit-test will produce output similar to:
-
-```
-PASS
-ok      sysen5260/matrixmultiply        0.007s
-```
+The := operator is a convinient method to initialize and declare a variable.

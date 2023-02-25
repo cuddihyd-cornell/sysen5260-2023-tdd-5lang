@@ -6,9 +6,8 @@ import (
 	"fmt"
 	"io"
 	"os"
-	"strings"
 	"strconv"
-
+	"strings"
 )
 
 type matrix struct {
@@ -119,7 +118,14 @@ func matrixMultiply(mat_a matrix, mat_b matrix) (matrix, error) {
 	if mat_a.ncols != mat_b.nrows{
 		return ans, errors.New("matrixMultiply: mat_a.ncols must == mat_b.nrows.")
 	}
-	// TODO: Implement matrix multiply 
+	for i := 0; i < mat_a.nrows; i++ {
+		for j := 0; j < mat_b.ncols; j++ {
+			for k := 0; k < mat_a.ncols; k++ {
+				ans.values[i][j] += mat_a.values[i][k] * mat_b.values[k][j]
+			}
+		}
+	}
+	
 	return ans, nil
 }
 
