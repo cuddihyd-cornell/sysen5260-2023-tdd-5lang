@@ -129,6 +129,15 @@ struct t_matrix multiply(struct t_matrix a, struct t_matrix b){
     c.matsize.ncols = b.matsize.ncols;
     c.values = malloc_matrix(c.matsize);
     // TODO: Implement Matrix Multiply
+    int i, j, k;
+    for(int row=0; row < a.matsize.nrows; row++){
+        for(int col=0; col < b.matsize.ncols; col++){
+            c.values[row][col] = 0;
+            for(int k=0; k < b.matsize.nrows; k++){
+                c.values[row][col] += a.values[row][k] * b.values[k][col];
+            }
+        }   
+    }
     return c;
 }
 
